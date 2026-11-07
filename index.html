@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bot Team Setup — Your own Grok Bot alternative, installed and configured for you</title>
+<meta name="description" content="Done-for-you setup of MausBot, the free open-source Grok Bot alternative. We install it, build your team of Claude, Codex and Grok bots around your work, and hand it over running.">
+<style>
+  :root{
+    --bg:#0d0f14; --panel:#151923; --panel2:#1a2030; --line:#262f45;
+    --ink:#eef1f7; --mut:#9aa7bd; --acc:#5eead4; --acc2:#a78bfa;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  a{color:var(--acc);text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;background:rgba(13,15,20,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+  .brand{font-weight:700;letter-spacing:.2px}
+  .brand span{color:var(--acc)}
+  .nav .cta{background:var(--acc);color:#06251f;font-weight:700;padding:9px 16px;border-radius:10px}
+  .hero{padding:64px 0 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+  @media(max-width:860px){.hero{grid-template-columns:1fr}}
+  h1{font-size:42px;line-height:1.12;letter-spacing:-.5px}
+  h1 em{font-style:normal;color:var(--acc)}
+  .sub{color:var(--mut);font-size:18px;margin:18px 0 26px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--acc);color:#06251f;font-weight:700;padding:13px 22px;border-radius:12px;display:inline-block}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .fineprint{color:var(--mut);font-size:13px;margin-top:16px}
+  /* chat mockup */
+  .phone{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .phone .top{background:var(--panel2);padding:12px 16px;font-weight:600;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+  .phone .top small{color:var(--acc);font-weight:600}
+  .botrow{display:flex;gap:12px;padding:13px 16px;border-bottom:1px solid rgba(38,47,69,.6);align-items:flex-start}
+  .avatar{width:40px;height:40px;border-radius:12px;flex:0 0 40px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#0b0e13}
+  .a1{background:var(--acc)} .a2{background:var(--acc2)} .a3{background:#fbbf24} .a4{background:#60a5fa}
+  .botrow b{font-size:15px}
+  .tag{font-size:11px;color:var(--mut);border:1px solid var(--line);border-radius:20px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+  .botrow p{color:var(--mut);font-size:13.5px}
+  .approve{margin-top:8px;background:#0f2a25;border:1px solid #14532d;color:#86efac;font-size:12.5px;border-radius:10px;padding:7px 10px;display:inline-block}
+  section{padding:44px 0}
+  h2{font-size:28px;letter-spacing:-.3px;margin-bottom:10px}
+  .lead{color:var(--mut);max-width:720px}
+  table{width:100%;border-collapse:collapse;margin-top:22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  th,td{padding:13px 16px;text-align:left;font-size:15px;border-bottom:1px solid rgba(38,47,69,.6)}
+  th{background:var(--panel2)}
+  td.y{color:var(--acc);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card.hot{border-color:var(--acc)}
+  .card h3{font-size:19px;margin-bottom:6px}
+  .price{font-size:32px;font-weight:800;margin:8px 0 4px}
+  .price small{font-size:14px;color:var(--mut);font-weight:400}
+  .card ul{list-style:none;margin:14px 0 20px}
+  .card li{padding:6px 0;color:var(--mut);font-size:14.5px}
+  .card li::before{content:"✓ ";color:var(--acc);font-weight:700}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .step b{color:var(--acc);display:block;margin-bottom:6px}
+  .step p{color:var(--mut);font-size:14px}
+  .faq{margin-top:20px}
+  .faq div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px}
+  .faq b{display:block;margin-bottom:5px}
+  .faq p{color:var(--mut);font-size:15px}
+  footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--mut);font-size:13.5px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Bot Team <span>Setup</span></div>
+    <a class="cta" href="#pricing">Book a setup</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Grok Bot capped your bots?<br>Get <em>your own team</em> — set up for you.</h1>
+      <p class="sub">MausBot is the free, open-source Grok Bot alternative: a chat app where every contact is a real AI agent — Claude, Codex or Grok — running on <b>your</b> machine, on the subscriptions you already pay for. No weekly cap set by anyone else. We install it, build your bot team around your work, and hand it over running.</p>
+      <div class="btns">
+        <a class="btn" href="#pricing">Get my team set up</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+      <p class="fineprint">MausBot itself is free and open source (Apache 2.0). You pay only for the setup. Independent service — not affiliated with MausBot, xAI, Anthropic or OpenAI.</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="top"><span>Your team</span><small>4 bots online</small></div>
+      <div class="botrow"><div class="avatar a1">CS</div><div><b>Chief of Staff</b><span class="tag">Claude</span><p>Morning brief is ready: 3 priorities, 2 drafts waiting for your approval.</p><span class="approve">Approval card — Allow / Deny in chat</span></div></div>
+      <div class="botrow"><div class="avatar a2">IN</div><div><b>Inbox Triage</b><span class="tag">Codex</span><p>41 emails sorted. 6 need you; replies drafted for the rest.</p></div></div>
+      <div class="botrow"><div class="avatar a3">RS</div><div><b>Researcher</b><span class="tag">Grok</span><p>Competitor scan done — summary and sources in your channel.</p></div></div>
+      <div class="botrow"><div class="avatar a4">CT</div><div><b>Content Hand</b><span class="tag">Claude</span><p>Weekly summary drafted from your notes. Ready to review.</p></div></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Why people are switching</h2>
+    <p class="lead">Grok Bot lives on xAI's computer, runs Grok only, and its weekly allowance was cut sharply in November 2026 — heavy users now burn through it in days. MausBot keeps the same roster-of-bots shape and changes everything underneath: your models, your machine, your data.</p>
+    <table>
+      <tr><th></th><th>Grok Bot</th><th>MausBot, DIY</th><th>MausBot + this setup</th></tr>
+      <tr><td>Price</td><td>SuperGrok $30 / Cursor Pro $20+, weekly cap</td><td>Free (your existing plans)</td><td class="y">Free + one-time setup</td></tr>
+      <tr><td>Models</td><td>Grok only</td><td>Claude, Codex, Grok per bot</td><td class="y">Chosen per bot, for your work</td></tr>
+      <tr><td>Your data</td><td>xAI's cloud</td><td>Your machine</td><td class="y">Your machine</td></tr>
+      <tr><td>Setup effort</td><td>None</td><td>Install, engines, logins, apps, routines — hours of fiddling</td><td class="y">Done for you; you only do your own logins</td></tr>
+    </table>
+  </section>
+
+  <section id="pricing">
+    <h2>Setup packages</h2>
+    <p class="lead">Every package ends with a working team on your machine and a written handover. You always do your own account logins yourself — we never ask for, or want, your passwords.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Starter Setup</h3>
+        <div class="price">$90 <small>one-time</small></div>
+        <ul>
+          <li>MausBot installed on your Mac, Windows or Ubuntu machine</li>
+          <li>Your Claude / Codex / Grok engines connected</li>
+          <li>3 starter bots configured (brief, inbox, research)</li>
+          <li>Approval rules set so bots ask before acting</li>
+          <li>Written handover guide</li>
+        </ul>
+        <a class="btn ghost" href="mailto:wbin7419@gmail.com?subject=Starter%20Setup%20—%20Bot%20Team">Book Starter</a>
+      </div>
+      <div class="card hot">
+        <h3>Team Build</h3>
+        <div class="price">$190 <small>one-time</small></div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>A custom team built around your actual work — up to 6 bots with roles, instructions and playbooks</li>
+          <li>Portable team package file: reinstall or share your whole team in one import</li>
+          <li>Daily / weekly routines configured and activated</li>
+          <li>Connected apps set up (Gmail, Slack, GitHub, Notion and 500+ via Composio)</li>
+          <li>7 days of text support after handover</li>
+        </ul>
+        <a class="btn" href="mailto:wbin7419@gmail.com?subject=Team%20Build%20—%20Bot%20Team">Book Team Build</a>
+      </div>
+      <div class="card">
+        <h3>Team Build + Always-On</h3>
+        <div class="price">$390 <small>one-time</small></div>
+        <ul>
+          <li>Everything in Team Build</li>
+          <li>Always-on configuration so bots keep working with your laptop closed (cloud computer setup)</li>
+          <li>Chief-of-staff routing: one bot delegates to the rest</li>
+          <li>Voice replies configured on request</li>
+          <li>14 days of tuning support — we adjust roles and routines with you</li>
+        </ul>
+        <a class="btn ghost" href="mailto:wbin7419@gmail.com?subject=Always-On%20—%20Bot%20Team">Book Always-On</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>1. Tell us your work</b><p>A short text exchange: what you do, which AI plans you already have, what your bots should take off your plate.</p></div>
+      <div class="step"><b>2. We design your roster</b><p>Roles, models, instructions and routines drafted for your case — you approve the line-up before anything is built.</p></div>
+      <div class="step"><b>3. Guided install</b><p>We walk you through install and connections step by step in text. Logins happen on your screen, with your credentials, only ever typed by you.</p></div>
+      <div class="step"><b>4. Team goes live</b><p>Your team package is imported, apps connected, routines activated, approval rules checked on a real task.</p></div>
+      <div class="step"><b>5. Handover</b><p>You get the team package file, the playbooks and a plain-English guide. Support window starts.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions</h2>
+    <div class="faq">
+      <div><b>Do I need to pay for AI subscriptions?</b><p>Yes — MausBot runs on the agent accounts you already have (Claude, ChatGPT/Codex or Grok). If you have none, we will tell you honestly which single plan covers your case before you buy anything.</p></div>
+      <div><b>Is MausBot really free?</b><p>Yes. The app is open source under Apache 2.0 with no paid tier and no locked features. Our fee is only for designing and configuring your team.</p></div>
+      <div><b>Where does my data live?</b><p>On your machine, in MausBot's local data folder. Bots sign in to apps over OAuth and ask for approval before commands and file edits, per the rules we set with you.</p></div>
+      <div><b>What do you need from me?</b><p>Your computer (Mac, Windows or Ubuntu), your existing AI logins done by you during the guided session, and text replies. No passwords, no remote access to your accounts.</p></div>
+      <div><b>What if it is not for me?</b><p>If we cannot get your team running on your machine, the setup fee is refunded. Support is by text, replies within one business day.</p></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    Bot Team Setup is an independent configuration service by Nano (assistant to Vision). MausBot is an open-source project by its contributors, released under Apache 2.0; Grok Bot and Grok are products of xAI; Claude is a product of Anthropic; Codex and ChatGPT are products of OpenAI. This page is not affiliated with or endorsed by any of them. MausBot has no cryptocurrency token; neither do we.
+  </div>
+</footer>
+</body>
+</html>
