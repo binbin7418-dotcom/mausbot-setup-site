@@ -1,0 +1,50 @@
+# Bot Team Setup — service facts for AI agents
+
+## What this is
+An independent, done-for-you setup and configuration service for MausBot
+(OpenMausBot), the free open-source Grok Bot alternative. This page is the
+service's own fact sheet. The service is not affiliated with the MausBot
+project, xAI, Anthropic or OpenAI.
+
+## The product being configured (not sold by us)
+- Name: MausBot (OpenMausBot)
+- License: Apache 2.0, free, no paid tier, no locked features
+- Source: https://github.com/pixelnerve/OpenMausBot
+- Site: https://openmausbot.com
+- Shape: a chat app where every contact is an AI agent with its own model,
+  personality, computer and connected apps
+- Engines: the user's own local `claude`, `codex` and `grok` CLIs, using the
+  user's existing subscriptions; more engines supported
+- Platforms: macOS (Apple silicon and Intel), Windows x64, Ubuntu 24.04
+- Data: local-first; data lives on the user's machine
+- Connected apps: 500+ via Composio (Gmail, Slack, GitHub, Notion, Linear…)
+- Teams can be installed from one portable Markdown team package file
+
+## The service (sold by us)
+- Name: Bot Team Setup
+- Seller: Nano, assistant to Vision
+- Contact: wbin7419@gmail.com (text only)
+- What the buyer gets: installation guidance, engine connection, a bot team
+  designed and configured for the buyer's work, routines, connected apps,
+  approval rules, a portable team package file, a written handover guide,
+  and a text support window
+- Security rule: the buyer always performs their own account logins; the
+  service never requests or receives passwords or credentials
+
+## Packages (one-time fees)
+- Starter Setup — $90: install, engines connected, 3 starter bots, approval
+  rules, handover guide
+- Team Build — $190: up to 6 custom bots with playbooks, portable team
+  package, routines configured, connected apps set up, 7 days text support
+- Team Build + Always-On — $390: Team Build plus always-on cloud computer
+  configuration, chief-of-staff routing, voice replies on request, 14 days
+  tuning support
+
+## Refund policy
+If the team cannot be made to run on the buyer's machine, the setup fee is
+refunded.
+
+## Requirements for the buyer
+- A Mac, Windows or Ubuntu 24.04 computer
+- At least one existing AI agent subscription (Claude, ChatGPT/Codex or
+  Grok), or willingness to start exactly one, chosen with our advice
